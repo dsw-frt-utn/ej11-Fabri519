@@ -9,10 +9,10 @@ namespace Dsw2026Ej11.Collections;
 //Incluir un método para eliminar un alumno utilizando la clave
 public class CasoDictionary
 {
-    private Dictionary<int, Alumno> dic = [];
-    public void AgregarAlumno(int legajo, Alumno alumno) => dic.Add(legajo, alumno);
-    public Alumno? BuscarAlumno(int legajo) => dic.TryGetValue(legajo, out var alumno) ? alumno : null;
-    public Dictionary<int, Alumno> ObtenerDiccionario() => dic;
-    public void EliminarAlumno(int legajo) => dic.Remove(legajo);
+    private Dictionary<int, Alumno> _dic = [];
+    public void AgregarAlumno(int legajo, Alumno alumno) => _dic.Add(legajo, alumno);
+    public Alumno? BuscarAlumno(int legajo) => _dic.TryGetValue(legajo, out var alumno) ? alumno : null;
+    public Dictionary<int, Alumno> ObtenerDiccionario() => _dic;
+    public void EliminarAlumno(int legajo) => _dic.Remove(legajo);
 
 }
