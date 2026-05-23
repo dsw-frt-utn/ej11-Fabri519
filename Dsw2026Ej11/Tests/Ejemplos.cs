@@ -49,18 +49,18 @@ internal class Ejemplos
         CasoDictionary dic = new();
         dic.AgregarAlumno(56142, new Alumno(1, "Jorge", 8));
         dic.AgregarAlumno(56450, new Alumno(1, "Juan", 8.2));
-        dic.AgregarAlumno(56600, new Alumno(1, "Pablo", 8.5));
+        dic.AgregarAlumno(56000, new Alumno(1, "Pablo", 8.5));
        
-        Console.WriteLine("Buscar por clave");
+        Console.WriteLine("Buscar por clave:");
         Alumno? encontrado = dic.BuscarAlumno(56142);
         Console.WriteLine($"Alumno encontrado {encontrado}");
         Console.WriteLine("\n");
-        Console.WriteLine("Buscar por clave un legajo que no existe");
+        Console.WriteLine("Buscar por clave un legajo que no existe:");
         Alumno? noExiste = dic.BuscarAlumno(56182);
         Console.WriteLine(noExiste?.ToString() ?? "No existe");
         Console.WriteLine("\n");
-        Console.WriteLine("Eliminar alumno por clave, 56600");
-        dic.EliminarAlumno(56600);
+        Console.WriteLine("Eliminar alumno por clave:");
+        dic.EliminarAlumno(56000);
         foreach (var a in dic.ObtenerDiccionario())
             Console.WriteLine($"Legajo: {a.Key} - {a.Value}");
 
