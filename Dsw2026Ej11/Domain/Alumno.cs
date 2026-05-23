@@ -17,4 +17,6 @@ public class Alumno
     {
         return $"{Id} - {Nombre} - Promedio: {Promedio}";
     }
+
+
 }

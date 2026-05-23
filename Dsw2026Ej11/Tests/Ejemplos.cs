@@ -1,4 +1,7 @@
-﻿namespace Dsw2026Ej11.Tests;
+﻿using Dsw2026Ej11.Collections;
+using Dsw2026Ej11.Domain;
+
+namespace Dsw2026Ej11.Tests;
 
 
 internal class Ejemplos
@@ -11,6 +14,27 @@ internal class Ejemplos
     //Eliminar el primer elemento de la lista y listar por consola los alumnos
     public static void EjemploList()
     {
+        CasoList _alumlist = new();
+        _alumlist.AgregarAlumno(new Alumno(1, "Juan", 20));
+        _alumlist.AgregarAlumno(new Alumno(2, "Maria", 18));
+        _alumlist.AgregarAlumno(new Alumno(3, "Pedro", 22));
+        Console.WriteLine("Alumnos:");
+        foreach (var a in _alumlist.ObtenerAlumnos())
+        {
+            Console.WriteLine(a);
+        }
+
+       Alumno encontrado = _alumlist.BuscarAlumnos("Maria");
+        Console.WriteLine($"Alumno: {encontrado}");
+
+        if (_alumlist.BuscarAlumnos("Jose") is null) Console.WriteLine("No existe");
+        Alumno alumnoAEliminar = _alumlist.BuscarAlumnos("Juan");
+        _alumlist.EliminarAlumno(alumnoAEliminar);
+        Console.WriteLine("Alumno eliminado con éxito.");
+        foreach (var a in _alumlist.ObtenerAlumnos())
+        {
+            Console.WriteLine(a);
+        }
 
     }
 
