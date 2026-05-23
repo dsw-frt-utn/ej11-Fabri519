@@ -35,6 +35,11 @@ internal class Ejemplos
         {
             Console.WriteLine(a);
         }
+        _alumlist.EliminarAlumnoWhere(1);
+        foreach (var a in _alumlist.ObtenerAlumnos())
+        {
+            Console.WriteLine(a);
+        }
 
 
     }
@@ -70,5 +75,40 @@ internal class Ejemplos
     public static void EjemploLinq()
     {
 
+        CasoLinq linq = new();
+     
+        Console.WriteLine($"El primer libro es: {linq.GetPrimero()}");
+        Console.WriteLine($"El ultimo libro es: {linq.GetUltimo()}");
+        Console.WriteLine($"Precio Total: {linq.GetTotalPrecios()}");
+        Console.WriteLine($"Precio Promedio: {linq.GetPromedioPrecios()}");
+
+        Console.WriteLine("Los ID mayores a 15 son:");
+        foreach (Libro l in linq.GetListById())
+        {
+            Console.WriteLine(l);
+        }
+        Console.WriteLine("lista de cada libro con su título y precio en formato moneda");
+        foreach (String l in linq.GetLibros())
+        {
+            Console.WriteLine(l);
+        }
+        Console.WriteLine("\n");
+        Console.WriteLine($"El precio mayor es: {linq.GetMayorPrecio()}");
+        Console.WriteLine($"El menor precio es: {linq.GetMenorPrecio()}");
+        Console.WriteLine("los libros cuyo precio sea mayor al promedio");
+        foreach (Libro l in linq.GetMayorPromedio()) 
+        {
+            Console.WriteLine(l);
+        }
+        Console.WriteLine("\n");
+        Console.WriteLine("los libros ordenados por título de forma descendente:");
+        foreach (Libro l in linq.GetTitulosDesc())
+        {
+            Console.WriteLine(l);
+        }
+
     }
+
+
 }
+
